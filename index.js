@@ -58,7 +58,7 @@ async function action() {
         });
       } catch (e) {
         console.log(e);
-        return core.setFailed(`Unable to merge ${previous} in to ${active}`);
+        return core.warning(`Unable to merge ${previous} in to ${active}`);
       }
     }
   } catch (e) {

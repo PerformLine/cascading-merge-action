@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mheap/cascading-merge-action.git"
+    "url": "git+https://github.com/PerformLine/cascading-merge-action.git"
   },
   "keywords": [
     "github",
@@ -20,9 +20,9 @@
   "author": "Michael Heap <m@michaelheap.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mheap/cascading-merge-action/issues"
+    "url": "https://github.com/PerformLine/cascading-merge-action/issues"
   },
-  "homepage": "https://github.com/mheap/cascading-merge-action#readme",
+  "homepage": "https://github.com/PerformLine/cascading-merge-action#readme",
   "devDependencies": {
     "jest": "^27.2.4",
     "nock": "^13.1.3"

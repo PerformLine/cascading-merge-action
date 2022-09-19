@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Cascading Merge
-        uses: mheap/cascading-merge-action@v1
+        uses: PerformLine/cascading-merge-action@master
         with:
           # Changes to `branch-1` will automatically be merged into `branch-2` and `branch-3`
           branches: |

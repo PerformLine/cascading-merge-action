@@ -39,28 +39,24 @@ async function action() {
     );
     console.log(activeBranches);
 
-    // Merge the trigger branch into each of these branches
+    // Merge the trigger branch into only the next branch.
+    // This same script will run in the next branch if there's more to do.
+    let mergeFrom = activeBranches[0];
+    let mergeInto = activeBranches[1];
 
-    for (let index in activeBranches) {
-      const active = activeBranches[index];
-      let previous = activeBranches[index - 1];
-      if (!previous) {
-        previous = triggerBranch;
-      }
-
-      try {
-        console.log(`Merging ${previous} in to ${active}`);
-        await octokit.rest.repos.merge({
-          owner,
-          repo,
-          base: active,
-          head: previous,
-        });
-      } catch (e) {
-        console.log(e);
-        return core.warning(`Unable to merge ${previous} in to ${active}`);
-      }
+    try {
+      console.log(`Merging ${mergeFrom} in to ${mergeInto}`);
+      await octokit.rest.repos.merge({
+        owner,
+        repo,
+        base: mergeInto,
+        head: mergeFrom,
+      });
+    } catch (e) {
+      console.log(e);
+      return core.setFailed(`Unable to merge ${mergeFrom} in to ${mergeInto}`);
     }
+
   } catch (e) {
     if (e.request && e.request.url) {
       return core.setFailed(

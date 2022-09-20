@@ -35,7 +35,7 @@ async function action() {
 
     // Remove any branches that appear in the heirarchy before the trigger branch
     const activeBranches = sourceBranches.slice(
-      sourceBranches.indexOf(triggerBranch) + 1
+      sourceBranches.indexOf(triggerBranch)
     );
     console.log(activeBranches);
 
